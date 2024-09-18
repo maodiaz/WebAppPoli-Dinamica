@@ -1,0 +1,256 @@
+/* Component Needs */
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.pc-tab > input,
+.pc-tab section > div {
+    display: none;
+}
+
+#tab1:checked ~ section .tab1,
+#tab2:checked ~ section .tab2,
+#tab3:checked ~ section .tab3,
+#tab4:checked ~ section .tab4,
+#tab5:checked ~ section .tab5 {
+    display: block;
+}
+
+#tab1:checked ~ nav .tab1,
+#tab2:checked ~ nav .tab2,
+#tab3:checked ~ nav .tab3,
+#tab4:checked ~ nav .tab4,
+#tab5:checked ~ nav .tab5 {
+    color: red;
+}
+
+/* Visual Styles */
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    background: #003f69;
+    font-family: "Raleway";
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 100;
+    font-size: 60px;
+    color: #e74c3c;
+}
+
+.pc-tab {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.pc-tab ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.pc-tab ul li label {
+    font-family: "Raleway";
+    float: right;
+    padding: 15px 25px;
+    border: 1px solid #b3aca4;
+    border-bottom: 0;
+    background: #106b87;
+    color: #FFFFFF;
+}
+.pc-tab ul li label:hover {
+    background: #157a8c;
+}
+.pc-tab ul li label:active {
+    background: #260d33;
+}
+.pc-tab ul li:not(:last-child) label {
+    border-right-width: 0;
+}
+.pc-tab section {
+    font-family: "Droid Serif";
+    clear: both;
+}
+.pc-tab section div {
+    padding: 20px;
+    width: 100%;
+    border: 0px solid #ddd;
+    /* Este color se puede quitar*/
+    line-height: 1.5em;
+    letter-spacing: 0.3px;
+    color: #FFFFFF;
+    font-size: 25px;
+}
+.pc-tab section div h2 {
+    margin: 0;
+    font-family: "Raleway";
+    letter-spacing: 1px;
+    color: #FFFFF;
+}
+
+#tab1:checked ~ nav .tab1 label,
+#tab2:checked ~ nav .tab2 label,
+#tab3:checked ~ nav .tab3 label,
+#tab4:checked ~ nav .tab4 label,
+#tab5:checked ~ nav .tab5 label {
+    background: #260d33;
+    color: #FFFFFF;
+    position: relative;
+}
+#tab1:checked ~ nav .tab1 label:after,
+#tab2:checked ~ nav .tab2 label:after,
+#tab3:checked ~ nav .tab3 label:after,
+#tab4:checked ~ nav .tab4 label:after,
+#tab5:checked ~ nav .tab5 label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #260d33;
+    left: 0;
+    bottom: -1px;
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 14px;
+    color: #CCC;
+    text-align: center;
+}
+footer a {
+    color: #AAA;
+    text-decoration: none;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    padding: 15px;
+}
+
+/* #260d33 #003f69 #106b87 #157a8c #b3aca4*/
+/****** inicio LOGIN MODAL ******/
+.loginmodal-container {
+    padding: 30px;
+    max-width: 350px;
+    width: 100% !important;
+    background-color: #157a8c; /*Este es el color de la caja*/
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-family: roboto;
+}
+
+.loginmodal-container h1 {
+    text-align: center;
+    font-size: 1.8em;
+    font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+    height: 44px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+    padding: 0 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+    border: 1px solid #b9b9b9;
+    border-top: 1px solid #a0a0a0;
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.loginmodal {
+    text-align: center;
+    font-size: 14px;
+    font-family: "Arial", sans-serif;
+    font-weight: 700;
+    height: 36px;
+    padding: 0 8px;
+    /* border-radius: 3px; */
+    /* -webkit-user-select: none;
+        user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+    border: 0px;
+    color: #ffffff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    background-color: #b3aca4;
+    padding: 17px 0px;
+    font-family: roboto;
+    font-size: 24px;
+    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+    border: 0px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background-color: #260d33;
+    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    opacity: 0.6;
+    transition: opacity ease 0.5s;
+}
+
+.login-help {
+    font-size: 12px;
+}
+
+.login-btn {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.button {
+    line-height: 55px;
+    padding: 0 30px;
+    background: #004a80;
+    color: #fff;
+    display: inline-block;
+    font-family: roboto;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.button:hover,
+.button:visited {
+    background: #006cba;
+    color: #fff;
+}
+
+/****** fin LOGIN MODAL ******/

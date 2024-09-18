@@ -1,0 +1,28 @@
+trigger:
+  branches:
+    include:
+      - main   # Rama de producción
+      - develop  # Rama de desarrollo (pre-producción)
+
+jobs:
+  - job: BuildAndDeploy
+    pool:
+      vmImage: 'ubuntu-latest'
+
+    strategy:
+      matrix:
+        production:
+          branch: main  # Despliegue en producción
+        preview:
+          branch: develop  # Despliegue en vista preliminar
+
+    steps:
+    - checkout: self
+
+    # Despliegue en Azure Static Web Apps
+    - task: AzureStaticWebApp@0
+      inputs:
+        azure_static_web_apps_api_token: 4784a916d88f6e3b3fdf620d0e4328be5e7e18a838c02382898208ad63b401be5-7e7c0f2d-d7fd-4a24-bbb8-7a96eb7c1fa400f362085  # Usa el token seguro almacenado en variables de pipeline
+        app_location: "/"  # Directorio de la app, donde están los archivos HTML y CSS
+        output_location: ""  # No es necesario si no tienes un proceso de compilación
+        production_branch: $(branch)  # Define la rama para producción o desarrollo según la estrategia
