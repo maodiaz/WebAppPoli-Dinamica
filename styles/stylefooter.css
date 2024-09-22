@@ -1,0 +1,45 @@
+/* Estilos del footer */
+footer {
+    background-color: #003f69; /* Color de fondo del footer */
+    color: #fff; /* Color del texto del footer */
+    text-align: center; /* Alinear el texto al centro */
+    padding: 20px 0; /* Relleno en la parte superior e inferior */
+    margin-top: 50px; /* Margen en la parte superior */
+    font-family: Arial, sans-serif; /* Familia de fuentes para el texto del footer */
+    font-size: 14px; /* Tamaño de fuente para el texto del footer */
+}
+
+/* Contenedor para el contenido del footer */
+.footer-container {
+    display: flex; /* Usar flexbox para el diseño */
+    justify-content: space-between; /* Espaciar elementos uniformemente */
+    align-items: center; /* Centrar elementos verticalmente */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    padding: 0 20px; /* Relleno en los lados izquierdo y derecho */
+}
+
+/* Enlaces del footer */
+footer a,
+.footer-link {
+    color: #fff; /* Color de los enlaces */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+}
+
+/* Primer enlace en el footer */
+footer a:first-of-type {
+    margin-right: 20px; /* Margen a la derecha del primer enlace */
+}
+
+/* Estado hover para los enlaces del footer */
+footer a:hover,
+.footer-link:hover {
+    color: #ffcc00; /* Cambiar color al pasar el ratón */
+    text-decoration: underline; /* Subrayar al pasar el ratón */
+}
+
+/* Texto del footer */
+.footer-text {
+    color: #fff; /* Color del texto */
+    margin-left: auto; /* Empujar el texto hacia la derecha */
+}
