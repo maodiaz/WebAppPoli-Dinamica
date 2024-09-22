@@ -136,6 +136,7 @@ img {
 }
 
 /* #260d33 #003f69 #106b87 #157a8c #b3aca4*/
+
 /****** inicio LOGIN MODAL ******/
 .loginmodal-container {
     padding: 30px;
@@ -255,49 +256,176 @@ img {
 
 /****** fin LOGIN MODAL ******/
 
-/* Estilo del footer */
-/* Estilos del footer */
-footer {
-    background-color: #003f69; /* Color de fondo del footer */
-    color: #fff; /* Color del texto del footer */
-    text-align: center; /* Alinear el texto al centro */
-    padding: 20px 0; /* Relleno en la parte superior e inferior */
-    margin-top: 50px; /* Margen en la parte superior */
-    font-family: Arial, sans-serif; /* Familia de fuentes para el texto del footer */
-    font-size: 14px; /* Tamaño de fuente para el texto del footer */
+/* Estilos de la seccion empresa */
+.empresa-title-section {
+    background-color: #004a80;
+    padding: 20px;
+    color: #FFFFFF;
+    font-family: "Raleway";
+    text-align: center;
+    border-bottom: 2px solid #e74c3c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* Adjust height as needed */
 }
 
-/* Contenedor para el contenido del footer */
-.footer-container {
-    display: flex; /* Usar flexbox para el diseño */
-    justify-content: space-between; /* Espaciar elementos uniformemente */
-    align-items: center; /* Centrar elementos verticalmente */
-    max-width: 1200px; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centrar el contenedor horizontalmente */
-    padding: 0 20px; /* Relleno en los lados izquierdo y derecho */
+.empresa-title-section h1 {
+    font-size: 4vw; /* Responsive font size */
+    margin: 0;
+    color: #e74c3c;
 }
 
-/* Enlaces del footer */
-footer a,
-.footer-link {
-    color: #fff; /* Color de los enlaces */
-    text-decoration: none; /* Quitar subrayado de los enlaces */
+.empresa-title-section p {
+    font-size: 2vw; /* Responsive font size */
+    margin: 10px 0 0;
+    color: #b3aca4;
 }
 
-/* Primer enlace en el footer */
-footer a:first-of-type {
-    margin-right: 20px; /* Margen a la derecha del primer enlace */
+/* Estilos de la seccion mision */
+.mision-section {
+    background-color: #004a80;
+    padding: 40px 20px;
+    color: #FFFFFF;
+    font-family: "Droid Serif";
+    text-align: center;
 }
 
-/* Estado hover para los enlaces del footer */
-footer a:hover,
-.footer-link:hover {
-    color: #ffcc00; /* Cambiar color al pasar el ratón */
-    text-decoration: underline; /* Subrayar al pasar el ratón */
+.mision-section h2 {
+    font-family: "Raleway";
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #e74c3c;
 }
 
-/* Texto del footer */
-.footer-text {
-    color: #fff; /* Color del texto */
-    margin-left: auto; /* Empujar el texto hacia la derecha */
+.mision-section p {
+    font-size: 18px;
+    line-height: 1.6em;
+    margin-bottom: 20px;
+}
+
+.mision-section .mision-item {
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+    vertical-align: top;
+}
+
+.mision-section .mision-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.mision-section .mision-item h3 {
+    font-family: "Raleway";
+    font-size: 24px;
+    margin: 10px 0;
+    color: #FFFFFF;
+}
+
+.mision-section .mision-item p {
+    font-size: 16px;
+    color: #b3aca4;
+}
+
+/* Estilos de la seccion vision */
+
+.vision-section {
+    background-color: #003f69;
+    padding: 40px 20px;
+    color: #FFFFFF;
+    font-family: "Droid Serif";
+    text-align: center;
+}
+
+.vision-section h2 {
+    font-family: "Raleway";
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #e74c3c;
+}
+
+.vision-section p {
+    font-size: 18px;
+    line-height: 1.6em;
+    margin-bottom: 20px;
+}
+
+.vision-section .vision-item {
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+    vertical-align: top;
+}
+
+.vision-section .vision-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.vision-section .vision-item h3 {
+    font-family: "Raleway";
+    font-size: 24px;
+    margin: 10px 0;
+    color: #FFFFFF;
+}
+
+.vision-section .vision-item p {
+    font-size: 16px;
+    color: #b3aca4;
+}
+
+
+/* Estilos de la seccion directivos */
+.directivos-section {
+    background-color: #106b87;
+    padding: 40px 20px;
+    color: #FFFFFF;
+    font-family: "Droid Serif";
+    text-align: center;
+}
+
+.directivos-section h2 {
+    font-family: "Raleway";
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #e74c3c;
+}
+
+.directivos-section p {
+    font-size: 18px;
+    line-height: 1.6em;
+    margin-bottom: 20px;
+}
+
+.directivos-section .directivo {
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+    vertical-align: top;
+}
+
+.directivos-section .directivo img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.directivos-section .directivo h3 {
+    font-family: "Raleway";
+    font-size: 24px;
+    margin: 10px 0;
+    color: #FFFFFF;
+}
+
+.directivos-section .directivo p {
+    font-size: 16px;
+    color: #b3aca4;
+    text-align: left;
 }

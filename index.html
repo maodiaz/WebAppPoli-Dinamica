@@ -8,32 +8,32 @@
     <link rel="stylesheet" href="./styles/stylefooter.css">
 </head>
 <body>
-    <div class="pc-tab">
-        <input id="tab1" type="radio" name="pct" />
-        <input id="tab2" type="radio" name="pct" />
-        <input id="tab3" type="radio" name="pct" />
-        <input id="tab4" type="radio" name="pct" />
-        <input checked="checked"  id="tab5" type="radio" name="pct" />
+    <div class="pc-tab"> <!-- Contenedor principal para las pestañas -->
+        <input id="tab1" type="radio" name="pct" /> <!-- Input de tipo radio para la pestaña 1 -->
+        <input id="tab2" type="radio" name="pct" /> <!-- Input de tipo radio para la pestaña 2 -->
+        <input id="tab3" type="radio" name="pct" /> <!-- Input de tipo radio para la pestaña 3 -->
+        <input id="tab4" type="radio" name="pct" /> <!-- Input de tipo radio para la pestaña 4 -->
+        <input checked="checked" id="tab5" type="radio" name="pct" /> <!-- Input de tipo radio para la pestaña 5, marcada como seleccionada por defecto -->
         
-        <nav>
-            <ul>
-                <li class="tab1">
-                <label for="tab1">Contáctenos</label>
-                </li>
-                <li class="tab2">
-                <label for="tab2">Ingreso Usuarios</label>
-                </li>
-                <li class="tab3">
-                <label for="tab3">Actividades Académicas</label>
-                </li>
-                <li class="tab4">
-                <label for="tab4">Equipo Profesional</label>
-                </li>
-                <li class="tab5">
-                <label for="tab5">Principal</label>
-                </li>
-            </ul>
-        </nav>
+        <nav> <!-- Inicio de la barra de navegación -->
+            <ul> <!-- Lista desordenada para las pestañas -->
+            <li class="tab1"> <!-- Elemento de lista para la pestaña 1 -->
+                <label for="tab1">Contáctenos</label> <!-- Etiqueta para seleccionar la pestaña 1 -->
+            </li>
+            <li class="tab2"> <!-- Elemento de lista para la pestaña 2 -->
+                <label for="tab2">Ingreso Usuarios</label> <!-- Etiqueta para seleccionar la pestaña 2 -->
+            </li>
+            <li class="tab3"> <!-- Elemento de lista para la pestaña 3 -->
+                <label for="tab3">Actividades Académicas</label> <!-- Etiqueta para seleccionar la pestaña 3 -->
+            </li>
+            <li class="tab4"> <!-- Elemento de lista para la pestaña 4 -->
+                <label for="tab4">Equipo Profesional</label> <!-- Etiqueta para seleccionar la pestaña 4 -->
+            </li>
+            <li class="tab5"> <!-- Elemento de lista para la pestaña 5 -->
+                <label for="tab5">Principal</label> <!-- Etiqueta para seleccionar la pestaña 5 -->
+            </li>
+            </ul> <!-- Fin de la lista desordenada -->
+        </nav> <!-- Fin de la barra de navegación -->
 
         <section>
             <div class="tab1">
@@ -111,65 +111,70 @@
                 </div>
             </div>
 
-            <div class="tab5" >
-                <h2 style="text-align:center !important; transform: translate(0, +100%);" >EMPRESA DE MÉDICOS ASOCIADOS</h2>
-                <br>
-                <h2>Misión</h2>
-                <br>
+            <div class="tab5">
+
+                    <div class="empresa-title-section">
+                        <h2 style="text-align:center !important; transform: translate(0, +100%);">EMPRESA DE MÉDICOS ASOCIADOS</h2>
+                    </div>
+
+                <section class="mision-section">
+                    <h2>Misión</h2>
+                    <br>
                     <p>Establecer vínculos entre los especialistas para mejorar sus competencias profesionales y personales</p>
                     <p>Apoyar a las instituciones que manejan pacientes oncológicos en la educación de los pacientes para 
                     una adecuada preparación para la realización de estudios diagnósticos</p>
                     <p>Propender por la divulgación del conocimiento científico en el área de imágenes diagnósticas oncológicas 
                     para la comunidad, principalmente para los colegas radiólogos en formación.</p>
+                </section>
                 <br>
-                <h2>Visión</h2>
+                <section class="vision-section">
+                    <h2>Visión</h2>
                     <p>Para los próximos años la asociación busca consolidar su objeto social como entidad sin ánimo de lucro que 
                     posibilite la atención del paciente oncológico, que promueva proyectos educativos en al área de radiología 
                     oncológica y ser reconocida como una asociación que ayuda a la mejora de la atención del cáncer en el país 
                     por medio del fortalecimiento científico de las imágenes diagnósticas en oncología.</p>
+                </section>
                 <br>
-                <h2>Directivos</h2>
-                    <p>La asociación médicos asociados tiene un órgano directivo determinado por los estatutos que es la junta directiva. 
-                    Está conformada por las siguientes personas:</p>
-                <br>
-                <table style="width: 50%;">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Cédula</th>
-                        <th>Cargo</th>
-                    </tr>
-                    <tr>
-                        <td>Angela Angeles</td>
-                        <td>25364262</td>
-                        <td>Presidente</td>
-                    </tr>
-                    <tr>
-                        <td>Juan Jiménez</td>
-                        <td>1234567</td>
-                        <td>Vicepresidente</td>
-                    </tr>
-                    <tr>
-                        <td>Pedro Pérez</td>
-                        <td>654897</td>
-                        <td>Tesorero</td>
-                    </tr>
-                </table>
+                <!-- Sección de Directivos -->
+                <section class="directivos-section">
+                    <h2>Directivos</h2>
+                    <p>La asociación médicos asociados tiene un órgano directivo determinado por los estatutos que es la junta directiva.</p> 
+                    <p>Está conformada por las siguientes personas:</p>
+                    <br>
+                    <table style="width: 50%;">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cédula</th>
+                            <th>Cargo</th>
+                        </tr>
+                        <tr>
+                            <td>Angela Angeles</td>
+                            <td>25364262</td>
+                            <td>Presidente</td>
+                        </tr>
+                        <tr>
+                            <td>Juan Jiménez</td>
+                            <td>1234567</td>
+                            <td>Vicepresidente</td>
+                        </tr>
+                        <tr>
+                            <td>Pedro Pérez</td>
+                            <td>654897</td>
+                            <td>Tesorero</td>
+                        </tr>
+                    </table>
+                </section>
             </div>
         </section>
     </div>
 
 
     <footer>    <!-- Inicio del pie de página -->
-        <!-- Línea horizontal para separar el contenido del pie de página -->
-        <hr>
-        <!-- Contenedor del pie de página -->
-        <div class="footer-container">
-            <!-- Enlace a la política de manejo de datos -->
-            <a href="politica-datos.html" class="footer-link">Política de Datos</a>
-            <!-- Enlace a la política de cookies -->
-            <a href="politica-cookies.html" class="footer-link">Política de Cookies</a>
-            <!-- Texto de derechos reservados -->
-            <span class="footer-text">&copy; 2024 WebApp-Poli. Todos los derechos reservados.</span>
+        <hr> <!-- Línea horizontal para separar el contenido del pie de página -->
+        <div class="footer-container"> <!-- Contenedor del pie de página -->
+            <a href="politica-datos.html" class="footer-link">Política de Datos</a> <!-- Enlace a la política de manejo de datos -->
+            <a href="politica-cookies.html" class="footer-link">Política de Cookies</a> <!-- Enlace a la política de cookies -->
+            <span class="footer-text">&copy; 2024 WebApp-Poli. Todos los derechos reservados.</span> <!-- Texto de derechos reservados -->
         </div>
     </footer>    <!-- Fin del pie de página -->
 
