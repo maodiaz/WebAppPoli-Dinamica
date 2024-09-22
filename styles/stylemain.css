@@ -256,7 +256,10 @@ img {
 
 /****** fin LOGIN MODAL ******/
 
-/* Estilos de la seccion empresa */
+
+
+/* Estilos de la seccion Home */
+/* Estilos del título de la sección Home */
 .empresa-title-section {
     background-color: #004a80;
     padding: 20px;
@@ -332,7 +335,6 @@ img {
 }
 
 /* Estilos de la seccion vision */
-
 .vision-section {
     background-color: #003f69;
     padding: 40px 20px;
@@ -379,7 +381,6 @@ img {
     font-size: 16px;
     color: #b3aca4;
 }
-
 
 /* Estilos de la seccion directivos */
 .directivos-section {
@@ -428,4 +429,58 @@ img {
     font-size: 16px;
     color: #b3aca4;
     text-align: left;
+}
+
+/*Estilos de la seccion Equipo Profesional */
+/*Estilo del título Equipo Profesional*/
+.equipo-profesional-title {
+    background-color: #003f69;
+    padding: 20px;
+    color: #FFFFFF;
+    font-family: "Raleway";
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* Adjust height as needed */
+}
+
+.equipo-profesional-title h1 {
+    font-size: 4vw; /* Responsive font size */
+    margin: 0;
+    color: #e74c3c;
+}
+
+.equipo-profesional-title p {
+    font-size: 2vw; /* Responsive font size */
+    margin: 10px 0 0;
+    color: #b3aca4;
+}
+
+/*Estido del contenedor de la tabla Equipo Profesional*/
+
+.equipo-profesional-table {
+    background-color: #003f69;
+    padding: 40px 20px;
+    color: #FFFFFF;
+    font-family: "Droid Serif";
+    text-align: center;
+}
+
+/* Estilos de la tabla Equipo Profesional */
+.style-tabla {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: "Droid Serif";
+    color: #FFFFFF;
+    text-align: center;
+    border: 0px solid;
+    margin: 0 auto;
+}
+
+.style-tabla img {
+    width: 200px; /* Increase the size of the images */
+    height: auto;
 }
