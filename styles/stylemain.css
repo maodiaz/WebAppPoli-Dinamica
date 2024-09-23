@@ -262,7 +262,7 @@ img {
 /* Estilos de la seccion Home */
 /* Estilos del título de la sección Home */
 .empresa-title-section {
-    background-color: #004a80;
+    background-color: #003f69;
     padding: 20px;
     color: #FFFFFF;
     font-family: "Raleway";
@@ -289,11 +289,11 @@ img {
 
 /* Estilos de la seccion mision */
 .mision-section {
-    background-color: #004a80;
+    background-color: #003f69;
     padding: 40px 20px;
     color: #FFFFFF;
     font-family: "Droid Serif";
-    text-align: center;
+    text-align: justify;
 }
 
 .mision-section h2 {
@@ -341,7 +341,7 @@ img {
     padding: 40px 20px;
     color: #FFFFFF;
     font-family: "Droid Serif";
-    text-align: center;
+    text-align: justify;
 }
 
 .vision-section h2 {
@@ -385,11 +385,11 @@ img {
 
 /* Estilos de la seccion directivos */
 .directivos-section {
-    background-color: #106b87;
+    background-color: #003f69;
     padding: 40px 20px;
     color: #FFFFFF;
     font-family: "Droid Serif";
-    text-align: center;
+    text-align: justify;
 }
 
 .directivos-section h2 {
@@ -459,7 +459,7 @@ img {
     color: #b3aca4;
 }
 
-/*Estido del contenedor de la tabla Equipo Profesional*/
+/*Estilo del contenedor de la tabla Equipo Profesional*/
 
 .equipo-profesional-table {
     background-color: #003f69;
@@ -484,4 +484,92 @@ img {
 .style-tabla img {
     width: 200px; /* Increase the size of the images */
     height: auto;
+}
+
+
+.contact-container {
+    background-color: #004a80;
+    padding: 40px 20px;
+    color: #FFFFFF;
+    font-family: "Droid Serif";
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.contact-container h2 {
+    font-family: "Raleway";
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #e74c3c;
+}
+
+/* Estilos de la seccion Actividades Académicas */
+/*Estilo del título Actividades Académicas*/
+.academic-activities-container {
+    background-color: #003f69;
+    padding: 40px 20px;
+    color: #FFFFFF;
+    font-family: "Droid Serif";
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.academic-activities-container {
+    font-size: 18px;
+    line-height: 1.6em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.academic-activities-description {
+    background-color: #003f69;
+    padding: 40px 20px;
+    color: #FFFFFF;
+    font-family: "Droid Serif";
+    text-align: justify;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+
+
+
+/* Estilos de la seccion Contacto */
+.contact-info {
+    background-color: #003f69;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: "Droid Serif";
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 18px;
+    line-height: 1.6em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.contact-container {
+    background-color: #003f69;
+    padding: 40px 20px;
+    color: #FFFFFF;
+    font-family: "Droid Serif";
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
 }
