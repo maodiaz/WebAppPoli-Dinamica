@@ -258,8 +258,7 @@ img {
 /****** fin LOGIN MODAL ******/
 
 
-
-/* Estilos de la seccion Home */
+/* Estilos de la sección Home */
 /* Estilos del título de la sección Home */
 .empresa-title-section {
     background-color: #003f69;
@@ -272,22 +271,22 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 20vh; /* Adjust height as needed */
+    height: 20vh; /* Ajustar altura según sea necesario */
 }
 
 .empresa-title-section h1 {
-    font-size: 4vw; /* Responsive font size */
+    font-size: 4vw; /* Tamaño de fuente responsivo */
     margin: 0;
     color: #e74c3c;
 }
 
 .empresa-title-section p {
-    font-size: 2vw; /* Responsive font size */
+    font-size: 2vw; /* Tamaño de fuente responsivo */
     margin: 10px 0 0;
     color: #b3aca4;
 }
 
-/* Estilos de la seccion mision */
+/* Estilos de la sección misión */
 .mision-section {
     background-color: #003f69;
     padding: 40px 20px;
@@ -335,7 +334,7 @@ img {
     color: #b3aca4;
 }
 
-/* Estilos de la seccion vision */
+/* Estilos de la sección visión */
 .vision-section {
     background-color: #003f69;
     padding: 40px 20px;
@@ -383,7 +382,7 @@ img {
     color: #b3aca4;
 }
 
-/* Estilos de la seccion directivos */
+/* Estilos de la sección directivos */
 .directivos-section {
     background-color: #003f69;
     padding: 40px 20px;
@@ -432,8 +431,8 @@ img {
     text-align: left;
 }
 
-/*Estilos de la seccion Equipo Profesional */
-/*Estilo del título Equipo Profesional*/
+/* Estilos de la sección Equipo Profesional */
+/* Estilo del título Equipo Profesional */
 .equipo-profesional-title {
     background-color: #003f69;
     padding: 20px;
@@ -444,23 +443,22 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 20vh; /* Adjust height as needed */
+    height: 20vh; /* Ajustar altura según sea necesario */
 }
 
 .equipo-profesional-title h1 {
-    font-size: 4vw; /* Responsive font size */
+    font-size: 4vw; /* Tamaño de fuente responsivo */
     margin: 0;
     color: #e74c3c;
 }
 
 .equipo-profesional-title p {
-    font-size: 2vw; /* Responsive font size */
+    font-size: 2vw; /* Tamaño de fuente responsivo */
     margin: 10px 0 0;
     color: #b3aca4;
 }
 
-/*Estilo del contenedor de la tabla Equipo Profesional*/
-
+/* Estilo del contenedor de la tabla Equipo Profesional */
 .equipo-profesional-table {
     background-color: #003f69;
     padding: 40px 20px;
@@ -482,11 +480,11 @@ img {
 }
 
 .style-tabla img {
-    width: 200px; /* Increase the size of the images */
+    width: 200px;
     height: auto;
 }
 
-
+/* Estilos del contenedor de contacto */
 .contact-container {
     background-color: #004a80;
     padding: 40px 20px;
@@ -506,8 +504,8 @@ img {
     color: #e74c3c;
 }
 
-/* Estilos de la seccion Actividades Académicas */
-/*Estilo del título Actividades Académicas*/
+/* Estilos de la sección Actividades Académicas */
+/* Estilo del título Actividades Académicas */
 .academic-activities-container {
     background-color: #003f69;
     padding: 40px 20px;
@@ -527,6 +525,7 @@ img {
     color: #ffffff;
 }
 
+/* Estilos de la descripción de Actividades Académicas */
 .academic-activities-description {
     background-color: #003f69;
     padding: 40px 20px;
@@ -539,10 +538,7 @@ img {
     max-width: 1200px;
 }
 
-
-
-
-/* Estilos de la seccion Contacto */
+/* Estilos de la sección Contacto */
 .contact-info {
     background-color: #003f69;
     padding: 20px;
