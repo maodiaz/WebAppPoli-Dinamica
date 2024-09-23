@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App Medicos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/styles/stylemain.css">
+    <link rel="stylesheet" href="/public/styles/stylefooter.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="pc-tab"> <!-- Contenedor principal para las pestañas -->
+            <input id="tab1" type="radio" name="pct" /> <!-- Input de tipo radio para la pestaña 1 -->
+            <input id="tab2" type="radio" name="pct" /> <!-- Input de tipo radio para la pestaña 2 -->
+            <input id="tab3" type="radio" name="pct" /> <!-- Input de tipo radio para la pestaña 3 -->
+            <input id="tab4" type="radio" name="pct" /> <!-- Input de tipo radio para la pestaña 4 -->
+            <input checked="checked" id="tab5" type="radio" name="pct" /> <!-- Input de tipo radio para la pestaña 5, marcada como seleccionada por defecto -->
+            
+            <nav> <!-- Inicio de la barra de navegación -->
+                <ul> <!-- Lista desordenada para las pestañas -->
+                    <li class="tab1"> <!-- Elemento de lista para la pestaña 1 -->
+                        <label for="tab1">Contáctenos</label> <!-- Etiqueta para seleccionar la pestaña 1 -->
+                    </li>
+                    <li class="tab2"> <!-- Elemento de lista para la pestaña 2 -->
+                        <label for="tab2">Ingreso Usuarios</label> <!-- Etiqueta para seleccionar la pestaña 2 -->
+                    </li>
+                    <li class="tab3"> <!-- Elemento de lista para la pestaña 3 -->
+                        <label for="tab3">Actividades Académicas</label> <!-- Etiqueta para seleccionar la pestaña 3 -->
+                    </li>
+                    <li class="tab4"> <!-- Elemento de lista para la pestaña 4 -->
+                        <label for="tab4">Equipo Profesional</label> <!-- Etiqueta para seleccionar la pestaña 4 -->
+                    </li>
+                    <li class="tab5"> <!-- Elemento de lista para la pestaña 5 -->
+                        <label for="tab5">Principal</label> <!-- Etiqueta para seleccionar la pestaña 5 -->
+                    </li>
+                </ul> <!-- Fin de la lista desordenada -->
+            </nav> <!-- Fin de la barra de navegación -->
+
+            <section> <!-- Sección para la pestaña de contacto -->
+                <div class="tab1"> <!-- Contenedor para la pestaña 1 -->
+                <div class="contact-container"> <!-- Contenedor para el título de contacto -->
+                    <h2>CONTÁCTENOS</h2> <!-- Título de la sección de contacto -->
+                </div>
+                <div class="contact-info"> <!-- Contenedor para la información de contacto -->
+                    <p>Dirección: CL1 23 54 BOGOTÁ</p> <!-- Dirección de contacto -->
+                    <p>Teléfono: 6019876543</p> <!-- Teléfono de contacto -->
+                    <p>e-mail: info@empresademedicos.com</p> <!-- Correo electrónico de contacto -->
+                </div>
+                </div>
+            
+                <div class="tab2"> <!-- Contenedor para la pestaña 2 -->
+                    <div> <!-- Contenedor sin fondo amarillo -->
+                        <div class="loginmodal-container"> <!-- Contenedor del modal de inicio de sesión -->
+                            <h1>ZONA USUARIOS</h1><br> <!-- Título de la sección de usuarios -->
+                            <div>
+                                <label>Usuario</label> <!-- Etiqueta para el campo de usuario -->
+                                <input type="text" name="user" id="user" class="form-control"> <!-- Campo de entrada para el usuario -->
+                                <label>Contraseña</label> <!-- Etiqueta para el campo de contraseña -->
+                                <input type="password" name="pass" id="pass" class="form-control"> <!-- Campo de entrada para la contraseña -->
+                                <button id="loginBtn" class="btn btn-primary mt-3">Ingreso</button> <!-- Botón de envío para iniciar sesión -->
+                                <button id="registerBtn" class="btn btn-secondary mt-3">Registro</button> <!-- Botón de registro -->
+                                <a href="usuario.html" target="_blank">/*Usuario*/</a> <!-- Enlace a la página de usuario -->
+                                <a href="administrador.html" target="_blank">/*Administrador*/</a> <!-- Enlace a la página de administrador -->
+                            </div>
+                            <div class="login-help"> <!-- Contenedor para la ayuda de inicio de sesión -->
+                                <a href="#"> ¿Olvidó su contraseña?</a> <!-- Enlace para recuperar la contraseña -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab3"> <!-- Contenedor para la pestaña 3 -->
+                    <div class="academic-activities-container"> <!-- Contenedor para el título de actividades académicas -->
+                        <h2>ACTIVIDADES ACADÉMICAS</h2> <!-- Título de la sección de actividades académicas -->
+                    </div>
+                    <div class="academic-activities-description"> <!-- Contenedor para la descripción de actividades académicas -->
+                        <p>La empresa Médicos Asociados presta servicios de docencia Ad Honorem a las instituciones de salud públicas en las que presta sus servicios.</p> <!-- Descripción de las actividades académicas -->
+                    </div>
+                    <ul class="academic-activities-list"> <!-- Lista de instituciones donde se realizan actividades académicas -->
+                        <li>Hospital de la Universidad Nacional de Colombia</li> <!-- Institución 1 -->
+                        <li>Hospital Materno Infantil</li> <!-- Institución 2 -->
+                        <li>Instituto Nacional de Cancerología</li> <!-- Institución 3 -->
+                    </ul>
+                </div>
+                <div class="tab4"> <!-- Contenedor para la pestaña 4 -->
+                    <br>
+                    <h2 class="equipo-profesional-title">EQUIPO PROFESIONAL</h2> <!-- Título de la sección de equipo profesional -->
+                    <div>
+                        <br>
+                        <section class="equipo-profesional-section"> <!-- Sección del equipo profesional -->
+                            <table class="style-tabla"> <!-- Tabla para mostrar el equipo profesional -->
+                                <thead>
+                                    <tr>
+                                        <td><img src="/public/img/Img1.png" ></td> <!-- Imagen del primer profesional -->
+                                        <td><img src="/public/img/Img2.png" ></td> <!-- Imagen del segundo profesional -->
+                                        <td><img src="/public/img/Img3.png" ></td> <!-- Imagen del tercer profesional -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><label>Juana Jimenez <br>Pediatra</label></td> <!-- Nombre y especialidad del primer profesional -->
+                                        <td><label>Laura López <br>Ortopedista</label></td> <!-- Nombre y especialidad del segundo profesional -->
+                                        <td><label>Luis Llanos <br>Psiquiatra</label></td> <!-- Nombre y especialidad del tercer profesional -->
+                                    </tr>
+                                    <tr>
+                                        <td><img src="/public/img/Img4.png" ></td> <!-- Imagen del cuarto profesional -->
+                                        <td><img src="/public/img/Img5.png" ></td> <!-- Imagen del quinto profesional -->
+                                        <td><img src="/public/img/Img6.png" ></td> <!-- Imagen del sexto profesional -->
+                                    </tr>
+                                    <tr>
+                                        <td><label>Jose Jimenez <br>Cardiólogo</label></td> <!-- Nombre y especialidad del cuarto profesional -->
+                                        <td><label>Marcela Martínez <br>Perinatóloga</label></td> <!-- Nombre y especialidad del quinto profesional -->
+                                        <td><label>Marcelo Mendez <br>Urólogo</label></td> <!-- Nombre y especialidad del sexto profesional -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="tab5"> <!-- Contenedor para la pestaña 5 -->
+                    <div class="empresa-title-section"> <!-- Sección del título de la empresa -->
+                        <h2 style="text-align:center !important; transform: translate(0, +100%);">EMPRESA DE MÉDICOS ASOCIADOS</h2> <!-- Título centrado -->
+                    </div>
+                    <section class="mision-section"> <!-- Sección de la misión -->
+                        <h2>Misión</h2> <!-- Título de la misión -->
+                        <br>
+                        <p>Establecer vínculos entre los especialistas para mejorar sus competencias profesionales y personales</p> <!-- Descripción de la misión -->
+                        <p>Apoyar a las instituciones que manejan pacientes oncológicos en la educación de los pacientes para 
+                        una adecuada preparación para la realización de estudios diagnósticos</p> <!-- Descripción adicional de la misión -->
+                        <p>Propender por la divulgación del conocimiento científico en el área de imágenes diagnósticas oncológicas 
+                        para la comunidad, principalmente para los colegas radiólogos en formación.</p> <!-- Descripción adicional de la misión -->
+                    </section>
+                    <br>
+                    <section class="vision-section"> <!-- Sección de la visión -->
+                        <h2>Visión</h2> <!-- Título de la visión -->
+                        <p>Para los próximos años la asociación busca consolidar su objeto social como entidad sin ánimo de lucro que 
+                        posibilite la atención del paciente oncológico, que promueva proyectos educativos en al área de radiología 
+                        oncológica y ser reconocida como una asociación que ayuda a la mejora de la atención del cáncer en el país 
+                        por medio del fortalecimiento científico de las imágenes diagnósticas en oncología.</p> <!-- Descripción de la visión -->
+                    </section>
+                    <br>
+                    <!-- Sección de Directivos -->
+                    <section class="directivos-section"> <!-- Sección de directivos -->
+                        <h2>Directivos</h2> <!-- Título de directivos -->
+                        <p>La asociación médicos asociados tiene un órgano directivo determinado por los estatutos que es la junta directiva.</p> <!-- Descripción de la junta directiva -->
+                        <p>Está conformada por las siguientes personas:</p> <!-- Introducción a la lista de directivos -->
+                        <br>
+                        <table style="width: 50%;"> <!-- Tabla de directivos -->
+                            <tr>
+                                <th>Nombre</th> <!-- Encabezado de columna: Nombre -->
+                                <th>Cédula</th> <!-- Encabezado de columna: Cédula -->
+                                <th>Cargo</th> <!-- Encabezado de columna: Cargo -->
+                            </tr>
+                            <tr>
+                                <td>Angela Angeles</td> <!-- Nombre del directivo -->
+                                <td>25364262</td> <!-- Cédula del directivo -->
+                                <td>Presidente</td> <!-- Cargo del directivo -->
+                            </tr>
+                            <tr>
+                                <td>Juan Jiménez</td> <!-- Nombre del directivo -->
+                                <td>1234567</td> <!-- Cédula del directivo -->
+                                <td>Vicepresidente</td> <!-- Cargo del directivo -->
+                            </tr>
+                            <tr>
+                                <td>Pedro Pérez</td> <!-- Nombre del directivo -->
+                                <td>654897</td> <!-- Cédula del directivo -->
+                                <td>Tesorero</td> <!-- Cargo del directivo -->
+                            </tr>
+                        </table>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/public/js/main.js"></script>
+
+
+    <footer>    <!-- Inicio del pie de página -->
+        <hr> <!-- Línea horizontal para separar el contenido del pie de página -->
+        <div class="footer-container"> <!-- Contenedor del pie de página -->
+            <a href="politica-datos.html" class="footer-link">Política de Datos</a> <!-- Enlace a la política de manejo de datos -->
+            <a href="politica-cookies.html" class="footer-link">Política de Cookies</a> <!-- Enlace a la política de cookies -->
+            <span class="footer-text">&copy; 2024 WebApp-Poli. Todos los derechos reservados.</span> <!-- Texto de derechos reservados -->
+        </div>
+    </footer>    <!-- Fin del pie de página -->
+
+</body>
+</html>
