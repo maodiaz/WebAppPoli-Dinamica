@@ -1,58 +1,41 @@
-// Este archivo maneja las interacciones de login y registro en la página web
-$(document).ready(function() {
-    // Maneja el evento de clic en el botón de login
-    $('#loginBtn').click(function() {
-        const user = $('#user').val();
-        const pass = $('#pass').val();
 
-        // Verifica que los campos de usuario y contraseña no estén vacíos
-        if (!user || !pass) {
-            alert('Por favor, complete todos los campos.');
-            return;
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    const loginBtn = document.getElementById('loginBtn');
 
-        // Realiza una solicitud AJAX para el login
-        $.ajax({
-            url: '/api/login',
-            method: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify({ user, pass }),
-            success: function(response) {
-                // Muestra un mensaje de éxito
-                alert(response.message);
-            },
-            error: function(xhr) {
-                // Muestra un mensaje de error
-                alert(xhr.responseJSON.error);
-            }
-        });
-    });
+    loginBtn.addEventListener('click', function() {
+        const username = document.getElementById('user').value;
+        const password = document.getElementById('pass').value;
 
-    // Maneja el evento de clic en el botón de registro
-    $('#registerBtn').click(function() {
-        const user = $('#user').val();
-        const pass = $('#pass').val();
-
-        // Verifica que los campos de usuario y contraseña no estén vacíos
-        if (!user || !pass) {
-            alert('Por favor, complete todos los campos.');
-            return;
-        }
-
-        // Realiza una solicitud AJAX para el registro
-        $.ajax({
-            url: '/api/register',
-            method: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify({ user, pass }),
-            success: function(response) {
-                // Muestra un mensaje de éxito
-                alert('Usuario registrado exitosamente');
-            },
-            error: function(xhr) {
-                // Muestra un mensaje de error
-                alert(xhr.responseJSON.error);
-            }
-        });
+        fetch('http://localhost:3001/users')
+            .then(response => response.json())
+            .then(users => {
+                /**
+                 * Encuentra un usuario del array de usuarios que coincida con el nombre de usuario y la contraseña dados.
+                 *
+                 * @param {Array} users - El array de objetos de usuario a buscar.
+                 * @param {string} username - El nombre de usuario a coincidir.
+                 * @param {string} password - La contraseña a coincidir.
+                 * @returns {Object|undefined} El objeto de usuario si se encuentra una coincidencia, de lo contrario undefined.
+                 */
+                /**
+                 * Finds a user object from the users array that matches the given username and password.
+                 * 
+                 * @param {Array} users - The array of user objects to search through.
+                 * @param {string} username - The username to match.
+                 * @param {string} password - The password to match.
+                 * @returns {Object|undefined} The user object if a match is found, otherwise undefined.
+                 * 
+                 * @description Este código busca un objeto de usuario en el array de usuarios que coincida con el nombre de usuario y la contraseña proporcionados.
+                 */
+                const user = users.find(user => user.username === username && user.password === password);
+                if (user) {
+                    alert('Login exitoso');
+                    // Redirigir a la página de usuario
+                    window.location.href = 'usuario.html';
+                } else {
+                    alert('Usuario o contraseña incorrectos');
+                }
+            })
+            .catch(error => console.error('Error:', error));
     });
 });
