@@ -1,0 +1,94 @@
+/* Estilos para las secciones */
+section {
+    padding: 40px 20px; /* Relleno en la parte superior e inferior y en los lados */
+    margin: 20px 0; /* Margen en la parte superior e inferior */
+    background-color: #f4f4f4; /* Color de fondo de las secciones */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para las secciones */
+}
+
+/* Títulos de las secciones */
+section h2 {
+    font-family: 'Arial', sans-serif; /* Familia de fuentes para los títulos */
+    font-size: 24px; /* Tamaño de fuente para los títulos */
+    color: #003f69; /* Color del texto de los títulos */
+    margin-bottom: 20px; /* Margen en la parte inferior de los títulos */
+}
+
+/* Párrafos dentro de las secciones */
+section p {
+    font-family: 'Arial', sans-serif; /* Familia de fuentes para los párrafos */
+    font-size: 16px; /* Tamaño de fuente para los párrafos */
+    color: #333; /* Color del texto de los párrafos */
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+    margin-bottom: 20px; /* Margen en la parte inferior de los párrafos */
+}
+
+/* Estilos para el header */
+header {
+    background-color: #003f69; /* Color de fondo del header */
+    color: #fff; /* Color del texto del header */
+    padding: 20px 0; /* Relleno en la parte superior e inferior */
+    text-align: center; /* Alinear el texto al centro */
+    font-family: 'Arial', sans-serif; /* Familia de fuentes para el texto del header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para el header */
+}
+
+/* Título del header */
+header h1 {
+    font-size: 32px; /* Tamaño de fuente para el título del header */
+    margin: 0; /* Quitar margen */
+}
+
+/* Subtítulo del header */
+header h2 {
+    font-size: 18px; /* Tamaño de fuente para el subtítulo del header */
+    margin: 0; /* Quitar margen */
+    font-weight: normal; /* Peso de fuente normal */
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #003f69; /* Color de fondo del footer */
+    color: #fff; /* Color del texto del footer */
+    text-align: center; /* Alinear el texto al centro */
+    padding: 20px 0; /* Relleno en la parte superior e inferior */
+    margin-top: 50px; /* Margen en la parte superior */
+    font-family: Arial, sans-serif; /* Familia de fuentes para el texto del footer */
+    font-size: 14px; /* Tamaño de fuente para el texto del footer */
+}
+
+/* Contenedor para el contenido del footer */
+.footer-container {
+    display: flex; /* Usar flexbox para el diseño */
+    justify-content: space-between; /* Espaciar elementos uniformemente */
+    align-items: center; /* Centrar elementos verticalmente */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    padding: 0 20px; /* Relleno en los lados izquierdo y derecho */
+}
+
+/* Enlaces del footer */
+footer a,
+.footer-link {
+    color: #fff; /* Color de los enlaces */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+}
+
+/* Primer enlace en el footer */
+footer a:first-of-type {
+    margin-right: 20px; /* Margen a la derecha del primer enlace */
+}
+
+/* Estado hover para los enlaces del footer */
+footer a:hover,
+.footer-link:hover {
+    color: #ffcc00; /* Cambiar color al pasar el ratón */
+    text-decoration: underline; /* Subrayar al pasar el ratón */
+}
+
+/* Texto del footer */
+.footer-text {
+    color: #fff; /* Color del texto */
+    margin-left: auto; /* Empujar el texto hacia la derecha */
+}
