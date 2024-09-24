@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = document.getElementById('user').value;
         const password = document.getElementById('pass').value;
 
-        fetch('http://localhost:3001/users')
+        fetch('http://localhost:3000/users')
             .then(response => response.json())
             .then(users => {
                 /**

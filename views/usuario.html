@@ -1,16 +1,42 @@
+<!-- 
+
+Este archivo HTML representa una página de usuario para el registro de lecturas médicas. 
+Incluye un formulario para ingresar datos de diferentes tipos de estudios médicos y una tabla para mostrar los registros.
+
+Estructura del documento:
+- Encabezado HTML con metadatos y enlaces a hojas de estilo de Bootstrap y estilos personalizados.
+- Cuerpo del documento con un contenedor principal que da la bienvenida al usuario y proporciona un enlace para cerrar sesión.
+- Un formulario dentro de una tarjeta para registrar lecturas médicas, con campos para ID, Ecografía, Rayos X, Resonancia y Tomografía.
+- Botones para agregar, modificar y cancelar registros.
+- Una tabla para mostrar los registros ingresados con opciones para seleccionar y borrar cada registro.
+- Scripts para manejar la lógica de agregar, modificar, cancelar y borrar registros, así como para renderizar la tabla dinámicamente.
+
+Funciones JavaScript:
+- renderTable: Renderiza la tabla de registros dinámicamente.
+- selectLectura: Selecciona un registro para modificarlo.
+- deleteLectura: Elimina un registro de la lista.
+- resetForm: Resetea el formulario a su estado inicial.
+
+Eventos:
+- btnAgregar: Agrega un nuevo registro a la lista.
+- btnModificar: Modifica un registro seleccionado.
+- btnCancelar: Cancela la operación de modificación y resetea el formulario.
+
+Enlaces a scripts externos:
+- jQuery
+- Bootstrap JS
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuario</title>
-    
-    <!-- Enlaces a hojas de estilo -->
+    <title>Registro de Lecturas</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/styles/stylemain.css">
     <link rel="stylesheet" href="/public/styles/stylefooter.css">
 </head>
+
 <body>
     <!-- Contenedor principal -->
     <div class="container mt-5">
@@ -19,8 +45,164 @@
         <a href="/index.html" class="btn btn-primary">Cerrar sesión</a>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        Formulario de registro de lecturas
+                    </div>
+                    <div class="card-body">
+                        <form id="lecturaForm">
+                            <div class="form-group">
+                                <label for="txtID">ID</label>
+                                <input type="text" required readonly class="form-control" id="txtID" placeholder="ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEco">Ecografía</label>
+                                <input type="text" required class="form-control" id="txtEco" placeholder="Ecografía">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtRay">Rayos X</label>
+                                <input type="text" required class="form-control" id="txtRay" placeholder="Rayos X">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtRes">Resonancia</label>
+                                <input type="text" required class="form-control" id="txtRes" placeholder="Resonancia Magnética">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtTac">Tomografía</label>
+                                <input type="text" required class="form-control" id="txtTac" placeholder="Tomografía TAC">
+                            </div>
+                            <div class="btn-group" role="group" aria-label="">
+                                <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
+                                <button type="button" id="btnModificar" class="btn btn-warning" disabled>Modificar</button>
+                                <button type="button" id="btnCancelar" class="btn btn-info" disabled>Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <h3>Tabla de registros (datos)</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Ecografía</th>
+                            <th>Rayos X</th>
+                            <th>Resonancia</th>
+                            <th>Tomografía</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lecturasTableBody">
+                        <!-- Aquí se insertarán las filas de la tabla dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array para almacenar las lecturas médicas
+        let lecturas = [];
+        // Índice del registro seleccionado para modificación
+        let selectedIndex = -1;
+
+        // Evento para agregar una nueva lectura
+        document.getElementById('btnAgregar').addEventListener('click', function() {
+            // Crear un objeto de lectura con los valores del formulario
+            const lectura = {
+                id: Date.now(), // Generar un ID único basado en la fecha actual
+                eco: document.getElementById('txtEco').value,
+                ray: document.getElementById('txtRay').value,
+                res: document.getElementById('txtRes').value,
+                tac: document.getElementById('txtTac').value
+            };
+            // Agregar la nueva lectura al array de lecturas
+            lecturas.push(lectura);
+            // Renderizar la tabla con las lecturas actualizadas
+            renderTable();
+            // Resetear el formulario
+            resetForm();
+        });
+
+        // Evento para modificar una lectura seleccionada
+        document.getElementById('btnModificar').addEventListener('click', function() {
+            if (selectedIndex >= 0) {
+                // Actualizar la lectura seleccionada con los nuevos valores del formulario
+                lecturas[selectedIndex] = {
+                    id: document.getElementById('txtID').value,
+                    eco: document.getElementById('txtEco').value,
+                    ray: document.getElementById('txtRay').value,
+                    res: document.getElementById('txtRes').value,
+                    tac: document.getElementById('txtTac').value
+                };
+                // Renderizar la tabla con las lecturas actualizadas
+                renderTable();
+                // Resetear el formulario
+                resetForm();
+            }
+        });
+
+        // Evento para cancelar la operación de modificación
+        document.getElementById('btnCancelar').addEventListener('click', function() {
+            // Resetear el formulario
+            resetForm();
+        });
+
+        // Función para renderizar la tabla de registros
+        function renderTable() {
+            const tableBody = document.getElementById('lecturasTableBody');
+            // Limpiar el contenido actual de la tabla
+            tableBody.innerHTML = '';
+            // Iterar sobre el array de lecturas y crear filas de tabla
+            lecturas.forEach((lectura, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${lectura.id}</td>
+                    <td>${lectura.eco}</td>
+                    <td>${lectura.ray}</td>
+                    <td>${lectura.res}</td>
+                    <td>${lectura.tac}</td>
+                    <td>
+                        <button class="btn btn-primary" onclick="selectLectura(${index})">Seleccionar</button>
+                        <button class="btn btn-danger" onclick="deleteLectura(${index})">Borrar</button>
+                    </td>
+                `;
+                // Agregar la fila a la tabla
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Función para seleccionar una lectura para modificación
+        function selectLectura(index) {
+            // Establecer el índice seleccionado
+            selectedIndex = index;
+            // Obtener la lectura seleccionada del array
+            const lectura = lecturas[index];
+            // Rellenar el formulario con los valores de la lectura seleccionada
+            document.getElementById('txtID').value = lectura.id;
+            document.getElementById('txtEco').value = lectura.eco;
+            document.getElementById('txtRay').value = lectura.ray;
+            document.getElementById('txtRes').value = lectura.res;
+            document.getElementById('txtTac').value = lectura.tac;
+            // Deshabilitar el botón de agregar y habilitar los botones de modificar y cancelar
+            document.getElementById('btnAgregar').disabled = true;
+            document.getElementById('btnModificar').disabled = false;
+            document.getElementById('txtRes').value = '';
+            document.getElementById('txtTac').value = '';
+            document.getElementById('btnAgregar').disabled = false;
+            document.getElementById('btnModificar').disabled = true;
+            document.getElementById('btnCancelar').disabled = true;
+            selectedIndex = -1;
+        }
+    </script>
+
     <!-- Enlaces a scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
