@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const loginBtn = document.getElementById('loginBtn');
     const registerBtn = document.getElementById('registerBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
 
     loginBtn.addEventListener('click', function() {
         const username = document.getElementById('user').value;
@@ -32,5 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     registerBtn.addEventListener('click', function() {
         window.location.href = 'views/registro.html'; // Dirige a la página registro.html
+    });
+
+    cancelBtn.addEventListener('click', function() {
+        // Redirigir a la página de inicio
+        window.location.href = '/index.html'; // Dirige a la página de inicio
     });
 });
