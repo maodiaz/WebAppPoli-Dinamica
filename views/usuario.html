@@ -79,7 +79,7 @@ Enlaces a scripts externos:
                                 <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
                                 <button type="button" id="btnModificar" class="btn btn-warning" disabled>Modificar</button>
                                 <button type="button" id="btnCancelar" class="btn btn-info" disabled>Cancelar</button>
-                                <button type="button" id="btnGuardar" class="btn btn-secondary">Guardar</button>
+                                <button type="button" id="btnDescargar" class="btn btn-secondary">Descargar</button>
                             </div>
                         </form>
                     </div>
@@ -156,9 +156,9 @@ Enlaces a scripts externos:
             resetForm();
         });
 
-        // Evento para guardar los datos en un archivo JSON
-        document.getElementById('btnGuardar').addEventListener('click', function() {
-            saveToJSON();
+        // Evento para descargar los datos en un archivo JSON
+        document.getElementById('btnDescargar').addEventListener('click', function() {
+            downloadTableData();
         });
 
         // Función para renderizar la tabla de registros
@@ -221,9 +221,17 @@ Enlaces a scripts externos:
             selectedIndex = -1;
         }
 
-        // Función para guardar los datos en un archivo JSON
-        function saveToJSON() {
-            const dataStr = JSON.stringify(lecturas, null, 2);
+        // Función para descargar los datos de la tabla en un archivo JSON
+        function downloadTableData() {
+            const tableData = lecturas.map(lectura => ({
+                id: lectura.id,
+                eco: lectura.eco,
+                ray: lectura.ray,
+                res: lectura.res,
+                tac: lectura.tac
+            }));
+
+            const dataStr = JSON.stringify(tableData, null, 2);
             const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
 
             const exportFileDefaultName = 'lecturas.json';
