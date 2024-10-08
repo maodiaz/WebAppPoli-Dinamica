@@ -36,13 +36,14 @@ jobs:
   - task: DownloadBuildArtifacts@0
     inputs:
       artifactName: 'drop'
+      downloadPath: '$(System.ArtifactsDirectory)'
     displayName: 'Download Artifact: drop'
 
   - task: AzureWebApp@1
     inputs:
       azureSubscription: 'ServicioDinamica'  # Nombre de tu conexión de servicio
       appName: 'WebAppPoliDinamica'  # Nombre de tu App Service de producción
-      package: '$(System.DefaultWorkingDirectory)/drop/app.zip'
+      package: '$(System.ArtifactsDirectory)/drop/app.zip'
     displayName: 'Deploy to Azure App Service'
 
 - job: DeployToStaging
@@ -52,11 +53,12 @@ jobs:
   - task: DownloadBuildArtifacts@0
     inputs:
       artifactName: 'drop'
+      downloadPath: '$(System.ArtifactsDirectory)'
     displayName: 'Download Artifact: drop'
 
   - task: AzureWebApp@1
     inputs:
       azureSubscription: 'ServicioDinamica'  # Nombre de tu conexión de servicio
       appName: 'WebAppPoliDinamica'  # Nombre de tu App Service de staging
-      package: '$(System.DefaultWorkingDirectory)/drop/app.zip'
+      package: '$(System.ArtifactsDirectory)/drop/app.zip'
     displayName: 'Deploy to Staging App Service'
