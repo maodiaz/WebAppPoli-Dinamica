@@ -19,10 +19,6 @@ jobs:
       npm install
     displayName: 'Install dependencies'
 
-  - script: |
-      npm run build  # Optional: if you have a build step
-    displayName: 'Build project'
-
 - job: DeployToProduction
   dependsOn: Build
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))
