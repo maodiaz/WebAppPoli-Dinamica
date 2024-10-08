@@ -35,6 +35,7 @@ Enlaces a scripts externos:
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/styles/stylemain.css">
     <link rel="stylesheet" href="/public/styles/stylefooter.css">
+    <link rel="stylesheet" href="/public/styles/styleauxiliares.css">
 </head>
 
 <body>
@@ -60,19 +61,19 @@ Enlaces a scripts externos:
                             </div>
                             <div class="form-group">
                                 <label for="txtEco">Ecografía</label>
-                                <input type="text" required class="form-control" id="txtEco" placeholder="Ecografía">
+                                <input type="text" required class="form-control" id="txtEco" placeholder="Ingrese la cantidad de Ecografía">
                             </div>
                             <div class="form-group">
                                 <label for="txtRay">Rayos X</label>
-                                <input type="text" required class="form-control" id="txtRay" placeholder="Rayos X">
+                                <input type="text" required class="form-control" id="txtRay" placeholder="Ingrese la cantidad de Rayos X">
                             </div>
                             <div class="form-group">
                                 <label for="txtRes">Resonancia</label>
-                                <input type="text" required class="form-control" id="txtRes" placeholder="Resonancia Magnética">
+                                <input type="text" required class="form-control" id="txtRes" placeholder="Ingrese la cantidad de Resonancia Magnética">
                             </div>
                             <div class="form-group">
                                 <label for="txtTac">Tomografía</label>
-                                <input type="text" required class="form-control" id="txtTac" placeholder="Tomografía TAC">
+                                <input type="text" required class="form-control" id="txtTac" placeholder="Ingrese la cantidad de Tomografía TAC">
                             </div>
                             <div class="btn-group" role="group" aria-label="">
                                 <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
@@ -109,12 +110,14 @@ Enlaces a scripts externos:
         let lecturas = [];
         // Índice del registro seleccionado para modificación
         let selectedIndex = -1;
+        // Variable global para el ID incremental
+        let currentId = 1;
 
         // Evento para agregar una nueva lectura
         document.getElementById('btnAgregar').addEventListener('click', function() {
             // Crear un objeto de lectura con los valores del formulario
             const lectura = {
-                id: Date.now(), // Generar un ID único basado en la fecha actual
+                id: currentId++, // Usar el ID incremental y luego incrementarlo
                 eco: document.getElementById('txtEco').value,
                 ray: document.getElementById('txtRay').value,
                 res: document.getElementById('txtRes').value,
@@ -191,13 +194,27 @@ Enlaces a scripts externos:
             // Deshabilitar el botón de agregar y habilitar los botones de modificar y cancelar
             document.getElementById('btnAgregar').disabled = true;
             document.getElementById('btnModificar').disabled = false;
-            document.getElementById('txtRes').value = '';
-            document.getElementById('txtTac').value = '';
+            document.getElementById('btnCancelar').disabled = false;
+        }
+
+        // Función para eliminar una lectura
+        function deleteLectura(index) {
+            // Eliminar la lectura del array
+            lecturas.splice(index, 1);
+            // Renderizar la tabla con las lecturas actualizadas
+            renderTable();
+        }
+
+        // Función para resetear el formulario
+        function resetForm() {
+            document.getElementById('lecturaForm').reset();
+            document.getElementById('txtID').value = '';
             document.getElementById('btnAgregar').disabled = false;
             document.getElementById('btnModificar').disabled = true;
             document.getElementById('btnCancelar').disabled = true;
             selectedIndex = -1;
         }
+
     </script>
 
     <!-- Enlaces a scripts -->
