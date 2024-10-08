@@ -61,24 +61,25 @@ Enlaces a scripts externos:
                             </div>
                             <div class="form-group">
                                 <label for="txtEco">Ecografía</label>
-                                <input type="text" required class="form-control" id="txtEco" placeholder="Ingrese la cantidad de Ecografía">
+                                <input type="text" required class="form-control" id="txtEco" placeholder="Ecografía">
                             </div>
                             <div class="form-group">
                                 <label for="txtRay">Rayos X</label>
-                                <input type="text" required class="form-control" id="txtRay" placeholder="Ingrese la cantidad de Rayos X">
+                                <input type="text" required class="form-control" id="txtRay" placeholder="Rayos X">
                             </div>
                             <div class="form-group">
                                 <label for="txtRes">Resonancia</label>
-                                <input type="text" required class="form-control" id="txtRes" placeholder="Ingrese la cantidad de Resonancia Magnética">
+                                <input type="text" required class="form-control" id="txtRes" placeholder="Resonancia Magnética">
                             </div>
                             <div class="form-group">
                                 <label for="txtTac">Tomografía</label>
-                                <input type="text" required class="form-control" id="txtTac" placeholder="Ingrese la cantidad de Tomografía TAC">
+                                <input type="text" required class="form-control" id="txtTac" placeholder="Tomografía TAC">
                             </div>
                             <div class="btn-group" role="group" aria-label="">
                                 <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
                                 <button type="button" id="btnModificar" class="btn btn-warning" disabled>Modificar</button>
                                 <button type="button" id="btnCancelar" class="btn btn-info" disabled>Cancelar</button>
+                                <button type="button" id="btnGuardar" class="btn btn-secondary">Guardar</button>
                             </div>
                         </form>
                     </div>
@@ -155,6 +156,11 @@ Enlaces a scripts externos:
             resetForm();
         });
 
+        // Evento para guardar los datos en un archivo JSON
+        document.getElementById('btnGuardar').addEventListener('click', function() {
+            saveToJSON();
+        });
+
         // Función para renderizar la tabla de registros
         function renderTable() {
             const tableBody = document.getElementById('lecturasTableBody');
@@ -215,6 +221,18 @@ Enlaces a scripts externos:
             selectedIndex = -1;
         }
 
+        // Función para guardar los datos en un archivo JSON
+        function saveToJSON() {
+            const dataStr = JSON.stringify(lecturas, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+
+            const exportFileDefaultName = 'lecturas.json';
+
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        }
     </script>
 
     <!-- Enlaces a scripts -->
