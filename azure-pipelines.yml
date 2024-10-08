@@ -12,7 +12,7 @@ jobs:
   steps:
   - task: NodeTool@0
     inputs:
-      versionSpec: '14.x'  # Adjust the Node.js version as needed
+      versionSpec: '14.x'  # Ajusta la versión de Node.js según tus necesidades
     displayName: 'Install Node.js'
 
   - script: |
@@ -29,8 +29,8 @@ jobs:
   steps:
   - task: AzureWebApp@1
     inputs:
-      azureSubscription: '<Your Azure Subscription>'
-      appName: '<Your App Service Name>'
+      azureSubscription: 'ServicioDinamica'  # Nombre de tu conexión de servicio
+      appName: 'WebAppPoliDinamica'  # Nombre de tu App Service de producción
       package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     displayName: 'Deploy to Azure App Service'
 
@@ -40,7 +40,7 @@ jobs:
   steps:
   - task: AzureWebApp@1
     inputs:
-      azureSubscription: '<Your Azure Subscription>'
-      appName: '<Your Staging App Service Name>'
+      azureSubscription: 'ServicioDinamica'  # Nombre de tu conexión de servicio
+      appName: 'WebAppPoliDinamica'  # Nombre de tu App Service de staging
       package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     displayName: 'Deploy to Staging App Service'
