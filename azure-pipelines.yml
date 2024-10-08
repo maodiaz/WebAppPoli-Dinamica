@@ -1,0 +1,47 @@
+trigger:
+  branches:
+    include:
+      - develop
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+- job: Build
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '14.x'  # Adjust the Node.js version as needed
+    displayName: 'Install Node.js'
+
+  - script: |
+      npm install
+    displayName: 'Install dependencies'
+
+  - script: |
+      npm run build  # Optional: if you have a build step
+    displayName: 'Build project'
+
+- job: Deploy
+  dependsOn: Build
+  steps:
+  - script: |
+      if [ "$(Build.SourceBranchName)" == "main" ]; then
+        echo "Deploying to production environment"
+        # Add production deployment steps here
+      elif [ "$(Build.SourceBranchName)" == "develop" ]; then
+        echo "Deploying to staging environment"
+        # Add staging deployment steps here
+      fi
+    displayName: 'Conditional Deploy step'
+
+- job: Deploy
+  dependsOn: Build
+  steps:
+  - task: AzureWebApp@1
+    inputs:
+      azureSubscription: '<Your Azure Subscription>'
+      appName: '<Your App Service Name>'
+      package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+    displayName: 'Deploy to Azure App Service'
