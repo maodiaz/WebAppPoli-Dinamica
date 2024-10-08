@@ -12,7 +12,7 @@ jobs:
   steps:
   - task: NodeTool@0
     inputs:
-      versionSpec: '14.x'  # Ajusta la versión de Node.js según tus necesidades
+      versionSpec: '18.x'  # Ajusta la versión de Node.js a 18.x (LTS)
     displayName: 'Install Node.js'
 
   - script: |
