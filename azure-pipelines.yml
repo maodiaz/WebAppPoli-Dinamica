@@ -45,3 +45,12 @@ jobs:
       appName: '<Your App Service Name>'
       package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     displayName: 'Deploy to Azure App Service'
+    condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))
+
+  - task: AzureWebApp@1
+    inputs:
+      azureSubscription: '<Your Azure Subscription>'
+      appName: '<Your Staging App Service Name>'
+      package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+    displayName: 'Deploy to Staging App Service'
+    condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'develop'))
