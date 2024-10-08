@@ -19,24 +19,44 @@ jobs:
       npm install
     displayName: 'Install dependencies'
 
+  - script: |
+      zip -r $(Build.ArtifactStagingDirectory)/app.zip .
+    displayName: 'Package application'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/app.zip'
+      ArtifactName: 'drop'
+    displayName: 'Publish Artifact: app.zip'
+
 - job: DeployToProduction
   dependsOn: Build
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))
   steps:
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      artifactName: 'drop'
+    displayName: 'Download Artifact: drop'
+
   - task: AzureWebApp@1
     inputs:
       azureSubscription: 'ServicioDinamica'  # Nombre de tu conexión de servicio
       appName: 'WebAppPoliDinamica'  # Nombre de tu App Service de producción
-      package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+      package: '$(System.DefaultWorkingDirectory)/drop/app.zip'
     displayName: 'Deploy to Azure App Service'
 
 - job: DeployToStaging
   dependsOn: Build
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'develop'))
   steps:
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      artifactName: 'drop'
+    displayName: 'Download Artifact: drop'
+
   - task: AzureWebApp@1
     inputs:
       azureSubscription: 'ServicioDinamica'  # Nombre de tu conexión de servicio
       appName: 'WebAppPoliDinamica'  # Nombre de tu App Service de staging
-      package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+      package: '$(System.DefaultWorkingDirectory)/drop/app.zip'
     displayName: 'Deploy to Staging App Service'
