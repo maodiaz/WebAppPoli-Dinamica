@@ -92,3 +92,14 @@ footer a:hover,
     color: #fff; /* Color del texto */
     margin-left: auto; /* Empujar el texto hacia la derecha */
 }
+
+.col-md-7 {
+    width: 58.33333333%; /* Ancho del 58.33% */
+    padding: 15px; /* Relleno de 15px */
+    box-sizing: border-box; /* Incluir el relleno y el borde en el ancho y alto */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    background-color: #fff; /* Color de fondo blanco */
+    border: 1px solid #ddd; /* Borde sólido de color gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
+}
