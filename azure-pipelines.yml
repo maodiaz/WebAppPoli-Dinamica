@@ -23,21 +23,9 @@ jobs:
       npm run build  # Optional: if you have a build step
     displayName: 'Build project'
 
-- job: Deploy
+- job: DeployToProduction
   dependsOn: Build
-  steps:
-  - script: |
-      if [ "$(Build.SourceBranchName)" == "main" ]; then
-        echo "Deploying to production environment"
-        # Add production deployment steps here
-      elif [ "$(Build.SourceBranchName)" == "develop" ]; then
-        echo "Deploying to staging environment"
-        # Add staging deployment steps here
-      fi
-    displayName: 'Conditional Deploy step'
-
-- job: Deploy
-  dependsOn: Build
+  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))
   steps:
   - task: AzureWebApp@1
     inputs:
@@ -45,12 +33,14 @@ jobs:
       appName: '<Your App Service Name>'
       package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     displayName: 'Deploy to Azure App Service'
-    condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))
 
+- job: DeployToStaging
+  dependsOn: Build
+  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'develop'))
+  steps:
   - task: AzureWebApp@1
     inputs:
       azureSubscription: '<Your Azure Subscription>'
       appName: '<Your Staging App Service Name>'
       package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     displayName: 'Deploy to Staging App Service'
-    condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'develop'))
