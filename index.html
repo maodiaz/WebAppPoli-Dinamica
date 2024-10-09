@@ -67,6 +67,29 @@
                         </div>
                     </div>
                 </div>
+                
+                <script>
+                    document.getElementById('loginBtn').addEventListener('click', function() {
+                        const user = document.getElementById('user').value;
+                        const pass = document.getElementById('pass').value;
+                
+                        // Aquí puedes agregar la lógica para verificar las credenciales del usuario
+                
+                        // Simulación de verificación de credenciales
+                        const tipoUsuario = user === 'admin' ? 'administrador' : 'usuario';
+                
+                        // Si las credenciales son correctas, almacena el tipo de usuario en el almacenamiento local
+                        localStorage.setItem('tipoUsuario', tipoUsuario);
+                
+                        // Redirige al usuario a la página principal
+                        window.location.href = '/usuario.html';
+                    });
+                
+                    document.getElementById('registerBtn').addEventListener('click', function() {
+                        // Redirige al usuario a la página de registro
+                        window.location.href = '/registro.html';
+                    });
+                </script>
 
                 <div class="tab3"> <!-- Contenedor para la pestaña 3 -->
                     <div class="academic-activities-container"> <!-- Contenedor para el título de actividades académicas -->
@@ -176,6 +199,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="public/js/main.js"></script>
+    <script src="public/js/login.js"></script>
 
 
     <footer>    <!-- Inicio del pie de página -->

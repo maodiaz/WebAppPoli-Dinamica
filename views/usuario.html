@@ -114,6 +114,9 @@ Enlaces a scripts externos:
         // Variable global para el ID incremental
         let currentId = 1;
 
+        // Obtener el tipo de usuario del almacenamiento local
+        const tipoUsuario = localStorage.getItem('tipoUsuario');
+
         // Evento para agregar una nueva lectura
         document.getElementById('btnAgregar').addEventListener('click', function() {
             // Crear un objeto de lectura con los valores del formulario
@@ -177,7 +180,7 @@ Enlaces a scripts externos:
                     <td>${lectura.tac}</td>
                     <td>
                         <button class="btn btn-primary" onclick="selectLectura(${index})">Seleccionar</button>
-                        <button class="btn btn-danger" onclick="deleteLectura(${index})">Borrar</button>
+                        ${tipoUsuario === 'administrador' ? `<button class="btn btn-danger" onclick="deleteLectura(${index})">Borrar</button>` : ''}
                     </td>
                 `;
                 // Agregar la fila a la tabla
