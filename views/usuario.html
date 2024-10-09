@@ -61,19 +61,19 @@ Enlaces a scripts externos:
                             </div>
                             <div class="form-group">
                                 <label for="txtEco">Ecografía</label>
-                                <input type="text" required class="form-control" id="txtEco" placeholder="Ingrese la cantidad de Ecografía">
+                                <input type="text" required class="form-control" id="txtEco" placeholder="Ecografía">
                             </div>
                             <div class="form-group">
                                 <label for="txtRay">Rayos X</label>
-                                <input type="text" required class="form-control" id="txtRay" placeholder="Ingrese la cantidad de Rayos X">
+                                <input type="text" required class="form-control" id="txtRay" placeholder="Rayos X">
                             </div>
                             <div class="form-group">
                                 <label for="txtRes">Resonancia</label>
-                                <input type="text" required class="form-control" id="txtRes" placeholder="Ingrese la cantidad de Resonancia Magnética">
+                                <input type="text" required class="form-control" id="txtRes" placeholder="Resonancia Magnética">
                             </div>
                             <div class="form-group">
                                 <label for="txtTac">Tomografía</label>
-                                <input type="text" required class="form-control" id="txtTac" placeholder="Ingrese la cantidad de Tomografía TAC">
+                                <input type="text" required class="form-control" id="txtTac" placeholder="Tomografía TAC">
                             </div>
                             <div class="btn-group" role="group" aria-label="">
                                 <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
@@ -101,6 +101,7 @@ Enlaces a scripts externos:
                         <!-- Aquí se insertarán las filas de la tabla dinámicamente -->
                     </tbody>
                 </table>
+                <button type="button" id="btnDescargar" class="btn btn-secondary mt-3">Descargar</button>
             </div>
         </div>
     </div>
@@ -153,6 +154,11 @@ Enlaces a scripts externos:
         document.getElementById('btnCancelar').addEventListener('click', function() {
             // Resetear el formulario
             resetForm();
+        });
+
+        // Evento para descargar los datos en un archivo JSON
+        document.getElementById('btnDescargar').addEventListener('click', function() {
+            downloadTableData();
         });
 
         // Función para renderizar la tabla de registros
@@ -215,6 +221,26 @@ Enlaces a scripts externos:
             selectedIndex = -1;
         }
 
+        // Función para descargar los datos de la tabla en un archivo JSON
+        function downloadTableData() {
+            const tableData = lecturas.map(lectura => ({
+                id: lectura.id,
+                eco: lectura.eco,
+                ray: lectura.ray,
+                res: lectura.res,
+                tac: lectura.tac
+            }));
+
+            const dataStr = JSON.stringify(tableData, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+
+            const exportFileDefaultName = 'lecturas.json';
+
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        }
     </script>
 
     <!-- Enlaces a scripts -->
